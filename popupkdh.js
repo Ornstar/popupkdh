@@ -64,7 +64,7 @@
       margin:0 -18px 16px;
       background:#1a1000;
     ">
-      <img src="https://plcl.me/images/nP9Uw.jpg" style="
+      <img src="http://plcl.me/images/EEhMc.png" style="
         width:100%;
         height:auto;
         display:block;

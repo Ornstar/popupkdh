@@ -138,7 +138,7 @@
       <a href="#" id="popup-kudahoki-close">×</a>
 
       <div id="popup-kudahoki-imagewrap">
-        <img src="http://plcl.me/images/UAvRi.png" alt="Kudahoki88">
+        <img src="http://plcl.me/images/rNkzz.jpg" alt="Kudahoki88">
       </div>
 
       <div id="popup-kudahoki-title">KLAIM BONUS & BUTUH BANTUAN ?</div>

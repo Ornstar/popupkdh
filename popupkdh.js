@@ -150,7 +150,7 @@
     var box = document.createElement("div");
     box.id = "popup-kudahoki-box";
 
-    var imgSrc = "http://plcl.me/images/ghaxg.jpg";
+    var imgSrc = "https://plcl.me/images/ghaxg.jpg";
 
     box.innerHTML = `
       <a href="#" id="popup-kudahoki-close">×</a>

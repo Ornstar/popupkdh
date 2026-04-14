@@ -15,6 +15,7 @@
 @keyframes glowBtn {0%,100% {box-shadow:0 0 0 rgba(255,200,0,0);} 50% {box-shadow:0 0 26px rgba(255,200,0,.9);}}
 @keyframes shineMove {0% {left:-120%;} 100% {left:120%;}}
 
+/* ===== WRAP (NO BLUR, LEBIH TAJAM) ===== */
 #popup-kudahoki-wrap{
   position:fixed;
   inset:0;
@@ -23,11 +24,11 @@
   justify-content:center;
   z-index:2147483647;
   padding:12px;
-  background:rgba(0,0,0,.78);
-  backdrop-filter: blur(8px);
+  background:rgba(0,0,0,.85);
   animation:fadeIn .4s ease;
 }
 
+/* ===== BOX ===== */
 #popup-kudahoki-box{
   position:relative;
   width:100%;
@@ -43,7 +44,7 @@
   animation:zoomIn .45s cubic-bezier(.2,.8,.2,1);
 }
 
-/* CLOSE FIX (tidak ketutup) */
+/* ===== CLOSE ===== */
 #popup-kudahoki-close{
   position:absolute;
   top:8px;
@@ -67,7 +68,7 @@
   transform:rotate(90deg) scale(1.1);
 }
 
-/* IMAGE */
+/* ===== IMAGE ===== */
 #popup-kudahoki-imagewrap{
   margin-top:8px;
 }
@@ -75,10 +76,10 @@
 #popup-kudahoki-imagewrap img{
   width:100%;
   border-radius:18px;
+  display:block;
 }
 
-/* ===== TEKS TIDAK DIUBAH, HANYA RAPI ===== */
-
+/* ===== TEXT ===== */
 #popup-kudahoki-title{
   font-size:15px;
   font-weight:800;
@@ -94,7 +95,7 @@
   max-width:300px;
 }
 
-/* BUTTON */
+/* ===== BUTTON ===== */
 #popup-kudahoki-button{
   display:inline-block;
   min-width:180px;
@@ -124,7 +125,7 @@
   animation:shineMove 2.8s infinite;
 }
 
-/* GOOGLE BOX */
+/* ===== GOOGLE BOX ===== */
 #popup-kudahoki-googlebox{
   margin-top:10px;
   padding:10px;
@@ -144,7 +145,7 @@
   margin-top:4px;
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 #popup-kudahoki-footer{
   font-size:11px;
   opacity:.7;

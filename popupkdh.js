@@ -21,7 +21,7 @@
         display:flex;
         align-items:center;
         justify-content:center;
-        z-index:2147483647;
+        z-index:99999999;
         padding:12px;
         background:rgba(0,0,0,.72);
       }
@@ -48,6 +48,7 @@
         height:32px;
         border-radius:50%;
         background:linear-gradient(180deg,#ff4a4a,#c10000);
+        border:1px solid rgba(255,255,255,.18);
         color:#fff;
         font-size:17px;
         font-weight:700;
@@ -55,7 +56,8 @@
         align-items:center;
         justify-content:center;
         text-decoration:none;
-        z-index:10;
+        box-shadow:0 4px 10px rgba(0,0,0,.35);
+        z-index:5;
       }
 
       #popup-kudahoki-imagewrap{
@@ -67,6 +69,7 @@
         overflow:hidden;
         border:1px solid rgba(255,190,60,.28);
         background:#120900;
+        box-shadow:inset 0 0 10px rgba(255,210,120,.04);
       }
 
       #popup-kudahoki-imagewrap img{
@@ -75,13 +78,21 @@
         display:block;
         object-fit:cover;
         object-position:center;
+        filter:none !important;
+        transform:none !important;
+        image-rendering:auto !important;
+        backdrop-filter:none !important;
+        -webkit-backdrop-filter:none !important;
       }
 
       #popup-kudahoki-title{
         font-size:14px;
         font-weight:800;
+        color:#ffe8ae;
         margin-bottom:8px;
+        letter-spacing:.2px;
         line-height:1.35;
+        text-shadow:0 1px 0 rgba(0,0,0,.35);
       }
 
       #popup-kudahoki-button{
@@ -91,16 +102,20 @@
         margin:0 auto 10px;
         border-radius:999px;
         background:linear-gradient(180deg,#fff3bf,#ffcf43,#df9b00);
+        border:1px solid rgba(255,215,120,.35);
         color:#17120b;
         text-decoration:none;
         font-size:13px;
         font-weight:800;
+        letter-spacing:.3px;
+        box-shadow:0 5px 12px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.42);
       }
 
       #popup-kudahoki-divider{
         width:78%;
+        max-width:250px;
         height:1px;
-        margin:10px auto;
+        margin:10px auto 10px;
         background:linear-gradient(to right, transparent, rgba(255,215,106,.75), transparent);
       }
 
@@ -117,26 +132,61 @@
       #popup-kudahoki-googlebox{
         max-width:280px;
         margin:0 auto 10px;
-        padding:10px;
+        padding:10px 10px 12px;
         border-radius:14px;
         border:1px solid rgba(255,190,60,.25);
-        background:rgba(255,180,0,.05);
+        background:linear-gradient(180deg,rgba(255,180,0,.05),rgba(255,180,0,.02));
+        box-shadow:inset 0 0 12px rgba(255,210,120,.03);
+      }
+
+      #popup-kudahoki-googlebox .kh-line1,
+      #popup-kudahoki-googlebox .kh-line2{
+        font-size:10px;
+        line-height:1.45;
+        color:#ffe5a0;
+      }
+
+      #popup-kudahoki-googlebox .kh-line1{
+        font-weight:800;
+        margin-bottom:5px;
+      }
+
+      #popup-kudahoki-googlebox .kh-line2{
+        font-weight:700;
+        margin-bottom:8px;
       }
 
       #popup-kudahoki-keyword{
+        max-width:185px;
+        margin:auto;
         padding:8px 10px;
         border-radius:7px;
-        background:#fff;
-        color:#111;
+        background:linear-gradient(180deg,#fffdf7,#efe4ca);
+        color:#1a1a1a;
         font-size:12px;
         font-weight:800;
-        text-align:center;
+        letter-spacing:.6px;
+        box-shadow:inset 0 1px 3px rgba(0,0,0,.10);
       }
 
       #popup-kudahoki-footer{
         font-size:11px;
         font-weight:800;
+        letter-spacing:.25px;
         color:#ffe19a;
+        line-height:1.35;
+        text-shadow:0 1px 0 rgba(0,0,0,.30);
+      }
+
+      @media (max-width: 768px){
+        #popup-kudahoki-box{
+          max-width:92vw;
+          padding:10px 12px 14px;
+          border-radius:22px;
+        }
+        #popup-kudahoki-imagewrap{
+          max-width:100%;
+        }
       }
     `;
 
@@ -150,18 +200,16 @@
     var box = document.createElement("div");
     box.id = "popup-kudahoki-box";
 
-    var imgSrc = "https://plcl.me/images/ghaxg.jpg";
-
     box.innerHTML = `
       <a href="#" id="popup-kudahoki-close">×</a>
 
       <div id="popup-kudahoki-imagewrap">
-        <img id="popup-kudahoki-img" src="${imgSrc}">
+        <img src="http://plcl.me/images/ghaxg.jpg" alt="Kudahoki88">
       </div>
 
       <div id="popup-kudahoki-title">KLAIM BONUS & BUTUH BANTUAN ?</div>
 
-      <a id="popup-kudahoki-button" href="https://goviplink.live/tele-official-kudahoki88" target="_blank">
+      <a id="popup-kudahoki-button" href="https://goviplink.live/tele-official-kudahoki88" target="_blank" rel="noopener noreferrer">
         HUBUNGI ADMIN
       </a>
 
@@ -176,8 +224,8 @@
       </div>
 
       <div id="popup-kudahoki-googlebox">
-        <div style="font-size:10px;margin-bottom:4px;">CARI KAMI DI GOOGLE DENGAN MUDAH</div>
-        <div style="font-size:10px;margin-bottom:6px;">KETIK NAMA SITUS KAMI :</div>
+        <div class="kh-line1">CARI KAMI DI GOOGLE DENGAN MUDAH</div>
+        <div class="kh-line2">KETIK NAMA SITUS KAMI :</div>
         <div id="popup-kudahoki-keyword">»» KUDAHOKI88 ««</div>
       </div>
 
@@ -187,23 +235,14 @@
     wrap.appendChild(box);
     document.body.appendChild(wrap);
 
-    // 🔥 AUTO FIX IMAGE IF ERROR
-    var img = box.querySelector("#popup-kudahoki-img");
-    img.onerror = function () {
-      this.src = "https://picsum.photos/590/397";
+    var closeBtn = document.getElementById("popup-kudahoki-close");
+    closeBtn.onclick = function (e) {
+      e.preventDefault();
+      wrap.remove();
     };
 
-    function closePopup() {
-      wrap.style.opacity = "0";
-      wrap.style.transform = "scale(.9)";
-      setTimeout(() => wrap.remove(), 300);
-    }
-
-    document.addEventListener("click", function (e) {
-      if (e.target.id === "popup-kudahoki-close" || e.target === wrap) {
-        e.preventDefault();
-        closePopup();
-      }
+    wrap.addEventListener("click", function (e) {
+      if (e.target === wrap) wrap.remove();
     });
   }
 
